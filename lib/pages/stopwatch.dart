@@ -14,6 +14,8 @@ class _StopWatchState extends State<StopWatch> {
   late Stopwatch stopwatch;
   late Timer t;
 
+  
+  // initial stage when the app just restart/reload
   @override
   void initState() {
     super.initState();
@@ -23,6 +25,7 @@ class _StopWatchState extends State<StopWatch> {
     });
   }
 
+  // function which controls the start/stop of the stopwatch
   void startStop() {
     if (stopwatch.isRunning) {
       stopwatch.stop();
@@ -31,6 +34,7 @@ class _StopWatchState extends State<StopWatch> {
     }
   }
 
+  // function for the time which is showing inside the stopwatch
   String formattedText() {
     var m = stopwatch.elapsed.inMilliseconds;
     String miliseconds = (m % 1000).toString().padLeft(3, "0");
